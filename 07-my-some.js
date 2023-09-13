@@ -24,13 +24,23 @@ console.log(result3);   // true
 *******************************************************************************/
 
 function mySome(array, cb) {
-    for(let value of array){
-        if(cb(value) === true) {
+    for(let [key, value] of array.entries(array)){
+        if(cb(value, key) === true) {
             return true;
         }
     }
     return false;
 }
+
+let result1 = mySome([5, 1, 7, 9], function(ele, i) {
+    return ele === i;
+});
+console.log(result1);   // true
+
+let result2 = mySome([5, 3, 7, 9], function(ele, i) {
+    return ele === i;
+});
+console.log(result2);   // false
 
 let result3 = mySome(['soup', 'noodles', 'bike', 'ship'], function(ele) {
     return ele.length === 4;
