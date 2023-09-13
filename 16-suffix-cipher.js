@@ -48,7 +48,7 @@ function suffixCipher(sentence, cipher) {
     newSent += toAdd
   });
 
-  return newSent;
+  return newSent.trim();
 }
 
 let cipher1 = {

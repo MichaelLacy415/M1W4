@@ -38,11 +38,14 @@ console.log(result6);   // true
 *******************************************************************************/
 
 function one(array, cb) {
+  let count = 0
   array.forEach((el, i) => {
-    cb(el, i)
+    if(cb(el, i)=== true){
+      count++;
+    }
 
   });
-
+  return count === 1
 }
 
 
